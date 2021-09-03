@@ -1,3 +1,5 @@
+#		Written by Andrew (Andrej) Poženel AKA SloDevTeam - 2020-2021		#
+
 # What built-in class does this script extend
 
 extends Control
@@ -20,8 +22,9 @@ func _ready():
 
 	VisualServer.texture_set_shrink_all_x2_on_set_data(true)
 
-
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+	Make_directory()
 
 
 # Theme initialization and loading
@@ -53,6 +56,8 @@ func _on_quit_exit_pressed() -> void:
 # VSCODE functions
 
 func _on_download_vscode_pressed() -> void:
+
+	Make_directory()
 
 	dlreq.download_file = current_dir + "Downloaded Software" + "vscode_installer.exe"
 	dlreq.use_threads = true
